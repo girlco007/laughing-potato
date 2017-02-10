@@ -36,18 +36,18 @@ class Wine extends Component{
 
 
     return (
-      <div className="col s12 m4 l4" >
-        <h2 className="center-align">Details</h2>
-        <div className="card horizontal">
-          <div className="card-stacked">
+      <div className="col s12 m12 l4" >
+        <h3 className="center-align">Details</h3>
+        <div className="card z-depth-4">
+          {/* <div className="card-stacked"> */}
             <div className="card-content">
-              <h5 className="center-align">{nam}</h5>
+              <h5 className="card-title">{nam}</h5>
               <p><b>Appellation:</b> {app}</p>
               <p><b>Region:</b> {reg}</p>
               <p><b>Color:</b> {col}</p>
               <div><b>Grapes:</b> {grap}</div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </div>
     )

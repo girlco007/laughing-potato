@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Request from 'superagent'
+import './css/regions.css'
 import WineList from './WineList';
 
 
@@ -36,26 +37,38 @@ class Regions extends Component{
 
 
   render(){
+
+    const styles = {
+      link: {
+        color: '#880e4f',
+        textDecoration: 'none',
+        heigh: 500
+      },
+      btn: {
+        textAlign: "left"
+      },
+    }
     // if(this.state === null) return null
 
     const regionsList = this.state.regions.map((region, idx) => {
-      var activeS = region === this.state.selectedRegion ? "active" : ""
+      var activeS = region === this.state.selectedRegion ? "#880e4f pink darken-4 white-text" : ""
       // console.log("region", region, idx, this.state.selectedRegion);
       // console.log("index", idx);
       // console.log("selected", this.state.selectedRegion);
       const className=`collection-item ${activeS}`
       return (
-          <a href="#!" className={className} key={idx} onClick={this.clickedRegion.bind(this)} data-region={region} >
+          <a href="#!" className={className} key={idx} onClick={this.clickedRegion.bind(this)} data-region={region} style={styles.link} >
           {region}
           </a>
-
       )
     });
+
+
     return (
       <div>
-        <div className="col s12 m4 l4">
-          <h2 className="center-align">Regions</h2>
-          <div className="collection">{regionsList}</div>
+        <div className="col s12 m12 l4" >
+          <h3 className="center-align">Regions</h3>
+          <div className="collection z-depth-4">{regionsList}</div>
         </div>
         <div >
           <WineList selectedRegion={this.state.selectedRegion}/>
